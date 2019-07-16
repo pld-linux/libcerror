@@ -1,22 +1,20 @@
 Summary:	Library to support cross-platform error functions
 Summary(pl.UTF-8):	Biblioteka wspierająca wieloplatformowe funkcje obsługi błędów w C
 Name:		libcerror
-Version:	20150101
-Release:	2
+Version:	20181117
+Release:	1
 License:	LGPL v3+
 Group:		Libraries
-Source0:	https://github.com/libyal/libcerror/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	67173ac854da43442dd1a9458441a595
-Patch0:		%{name}-system-libs.patch
+#Source0Download: https://github.com/libyal/libcerror/releases
+Source0:	https://github.com/libyal/libcerror/releases/download/%{version}/%{name}-beta-%{version}.tar.gz
+# Source0-md5:	70d5c97366b5741cf59a706a7af22367
 URL:		https://github.com/libyal/libcerror/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1.6
 BuildRequires:	gettext-tools >= 0.18.1
-BuildRequires:	libcstring-devel >= 20120425
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
-Requires:	libcstring >= 20120425
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,7 +29,6 @@ Summary:	Header files for libcerror library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libcerror
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libcstring-devel >= 20120425
 
 %description devel
 Header files for libcerror library.
@@ -53,11 +50,10 @@ Statyczna biblioteka libcerror.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__gettextize}
-%{__sed} -i -e 's/ po\/Makefile.in//' configure.ac
+#%{__sed} -i -e 's/ po\/Makefile.in//' configure.ac
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
