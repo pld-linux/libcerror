@@ -14,7 +14,6 @@ BuildRequires:	automake >= 1.6
 BuildRequires:	gettext-tools >= 0.18.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -53,7 +52,6 @@ Statyczna biblioteka libcerror.
 
 %build
 %{__gettextize}
-#%{__sed} -i -e 's/ po\/Makefile.in//' configure.ac
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
