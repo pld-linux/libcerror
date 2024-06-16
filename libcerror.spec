@@ -1,13 +1,13 @@
 Summary:	Library to support cross-platform error functions
 Summary(pl.UTF-8):	Biblioteka wspierająca wieloplatformowe funkcje obsługi błędów w C
 Name:		libcerror
-Version:	20240101
+Version:	20240413
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libcerror/releases
 Source0:	https://github.com/libyal/libcerror/releases/download/%{version}/%{name}-beta-%{version}.tar.gz
-# Source0-md5:	0b480237ad4525c88c9db66b8ef63a65
+# Source0-md5:	c17f958093a778ddd4ba16ebac07186e
 URL:		https://github.com/libyal/libcerror/
 BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1.6
